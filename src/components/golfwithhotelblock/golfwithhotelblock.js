@@ -4,7 +4,8 @@ import {BsPlus} from "@react-icons/all-files/bs/BsPlus";
 import hotelimg from "../../images/hotel.png";
 import golfimg from "../../images/sgolf.png";
 
-export default function Golfwithhotelblock() {
+export default function Golfwithhotelblock( props ) {
+  // console.log(props)
   return (
     <div>
       <div className="golf-info no-padding golf-plus-hotel">
@@ -27,11 +28,9 @@ export default function Golfwithhotelblock() {
           <Row>
             <Col lg={9} md={12} xs={12}>
               <div className="golf-houe">
-                <h4>Banyan Golf Hua Hin Thailand</h4>
+                <h4>{props.title}</h4>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-                  elestie velit, sit amet sodales orci tellus euiod felis. Lorem
-                  ipsum dolor sit amet, consectetur.
+                  {props.detail}
                 </p>
               </div>
             </Col>
@@ -40,7 +39,7 @@ export default function Golfwithhotelblock() {
               <div className="price new-price-filter">
                 <div>
                   <p>The price starts from</p>
-                  <h3 className="green-color">2325 THB</h3>
+                  <h3 className="green-color">{props.price}</h3>
                 </div>
 
                 <a href="#" className="book-btn">

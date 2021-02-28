@@ -7,7 +7,7 @@ import {IoIosMail} from "@react-icons/all-files/io/IoIosMail";
 import {FaPhoneVolume} from "@react-icons/all-files/fa/FaPhoneVolume";
 import {FaFacebookF} from "@react-icons/all-files/fa/FaFacebookF";
 
-import {Link} from "gatsby";
+import {Link, useStaticQuery, graphql } from "gatsby";
 
 export default function Head() {
   const [state, setState] = useState({
@@ -20,6 +20,19 @@ export default function Head() {
     });
   };
 
+  const data = useStaticQuery(graphql`
+    query {
+        wpcontent {
+          cities {
+            edges {
+              node {
+                name
+              }
+            }
+          }
+          }
+    }
+  `)
   return (
     <>
       <div className="custom-header">
@@ -72,9 +85,18 @@ export default function Head() {
                 <NavDropdown title="Areas" id="collasible-nav-dropdown">
                   <Row>
                     <Col xs={8}>
-                      <h5 className="menutitle"> Thailand</h5>
+                      {/* <h5 className="menutitle"> Thailand</h5> */}
                       <ul className="short-menu">
-                        <li>
+                        {
+                          data.wpcontent.cities.edges.map(c => 
+                            <li key={c.node.id}>
+                              <a>
+                                <Link to="/area">{c.node.name}</Link>
+                              </a>
+                            </li>
+                          )
+                        }
+                        {/* <li>
                           <a>
                             <Link to="/area">Bangkok</Link>
                           </a>
@@ -108,11 +130,11 @@ export default function Head() {
                           <a>
                             <Link to="/area">River Kwai</Link>
                           </a>
-                        </li>
+                        </li> */}
                       </ul>
                     </Col>
 
-                    <Col xs={4}>
+                    {/* <Col xs={4}>
                       <h5 className="menutitle"> Vietnam</h5>
                       <ul className="short-menu">
                         <li>
@@ -128,7 +150,7 @@ export default function Head() {
                           <a>City</a>
                         </li>
                       </ul>
-                    </Col>
+                    </Col> */}
                   </Row>
                 </NavDropdown>
 

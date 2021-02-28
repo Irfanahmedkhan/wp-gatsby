@@ -10,9 +10,55 @@ import {FaUserAlt} from "@react-icons/all-files/fa/FaUserAlt";
 import {FaMapMarkerAlt} from "@react-icons/all-files/fa/FaMapMarkerAlt";
 import {FaUserPlus} from "@react-icons/all-files/fa/FaUserPlus";
 import herobg from "../../images/slider-1.png";
+import { useStaticQuery, graphql } from 'gatsby'
 
+export default function GolfWithHotel() {
 
-export default function golfwithhotel() {
+  const data = useStaticQuery(graphql`
+    query {
+      wpcontent {
+        venue(id: "cG9zdDo3Ng==") {
+          title
+          id
+          acf_venueprice {
+            pricePerPersonBottomWeekend
+          }
+          acf_venuefactsheet {
+            shortDetails
+            venueMultipleImagesSlider {
+              addImage {
+                sourceUrl
+              }
+            }
+          }
+        }
+        venues {
+          edges {
+            node {
+              id
+              slug
+              title
+              acf_venueavaliable {
+                venueIsApplicableFor
+              }
+              acf_venuefactsheet {
+                shortDetails
+                venueMultipleImagesSlider {
+                  addImage {
+                    sourceUrl
+                  }
+                }
+              }
+              acf_venueprice {
+                pricePerPersonWeekday
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+  
   return (
     <div>
       <section className="hero-banner-short">
@@ -126,14 +172,10 @@ export default function golfwithhotel() {
               <div className="featured-slide-lr d-flex align-items-center justify-content-center">
                 <div className="new-box">
                   <div className="green-room">
-                    <h3>HUA HIN GOLF PACKAGES WITH HOTEL</h3>
+                    <h3>{data.wpcontent.venue.title}</h3>
 
                     <p className="text-justify">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Praesent erat tortor, lacinia ut arcu id, pellentesque
-                      vulputate massa. Sed egestas ex convallis, hendrerit metus
-                      id, euismod urna. Sed hendrerit posuere ligula, ut
-                      ultrices lectus aliquam non. Quisque nec hendrerit tortor.{" "}
+                      {data.wpcontent.venue.acf_venuefactsheet.shortDetails}
                     </p>
 
                     <div className="golf-bio">
@@ -144,7 +186,7 @@ export default function golfwithhotel() {
                               <strong>The price starts from</strong>
                             </p>
                             <h3 className="green-color mb-0">
-                              <strong>2325 THB</strong>
+                              <strong>{data.wpcontent.venue.acf_venueprice.pricePerPersonBottomWeekend}</strong>
                             </h3>
                           </div>
                         </Col>
@@ -200,24 +242,19 @@ export default function golfwithhotel() {
 
             <Col md={12}>
               <Row>
-                <Col md={6}>
-                  <Golfwithhotelblock />
-                </Col>
-                <Col md={6}>
-                  <Golfwithhotelblock />
-                </Col>
-                <Col md={6}>
-                  <Golfwithhotelblock />
-                </Col>
-                <Col md={6}>
-                  <Golfwithhotelblock />
-                </Col>
-                <Col md={6}>
-                  <Golfwithhotelblock />
-                </Col>
-                <Col md={6}>
-                  <Golfwithhotelblock />
-                </Col>
+                {
+                  data.wpcontent.venues.edges
+                  .filter(f=>f.node.acf_venueavaliable.venueIsApplicableFor != 'For Hotel')
+                  .map(a => 
+                    <Col md={6}>
+                      <Golfwithhotelblock 
+                        title={a.node.title} 
+                        detail={a.node.acf_venuefactsheet.shortDetails} 
+                        price={a.node.acf_venueprice.pricePerPersonWeekday} 
+                        />
+                    </Col>
+                  )
+                }
               </Row>
             </Col>
           </Row>
