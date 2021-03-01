@@ -1,5 +1,5 @@
 import React from 'react'
-import Area from '../components/area/Area'
+import Area from '../components/templates/Area'
 import {Layout} from "../components/Layout"
  const area = () => {
     return (

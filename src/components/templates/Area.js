@@ -25,10 +25,35 @@ import golfcar from "../../images/golf-cart-eps.png";
 import bearing from "../../images/bearing-eps.png";
 import open from "../../images/open-eps.png";
 import driving from "../../images/golfer-eps.png";
+import {useStaticQuery, graphql, Link} from "gatsby";
 
 import destimage from "../../images/destication.png";
 
-export default function Area() {
+export default function Area({data}) {
+
+
+    const {     location,
+        holesPairsLength,
+        founded,
+        designer,
+        distance,
+        golfCarts,
+        bearing,
+        golfShoes,
+        umbrella,
+        amenties,
+        drivingRange,
+        fieldGroupName,
+        locationNearBy,
+        maxNumberOfPlayersPerGroup,
+        open,
+        perPersonPrice,
+        shortDetails,
+        venueDetailsForPrice,
+        venueMidTitle,
+        venueMoreDetails} = data.wpcontent.venue.acf_venuefactsheet
+
+
   return (
     <div>
       <section className="hero-banner">
@@ -301,7 +326,7 @@ export default function Area() {
                   </div>
 
                   <div className="field-60">
-                    <p>9 kilometers south of Hua Hin</p>
+                    <p>{location}</p>
                   </div>
                 </li>
 
@@ -314,7 +339,7 @@ export default function Area() {
                   </div>
 
                   <div className="field-60">
-                    <p>18 holes par 72 (7361 yards)</p>
+                    <p>{holesPairsLength}</p>
                   </div>
                 </li>
 
@@ -327,7 +352,7 @@ export default function Area() {
                   </div>
 
                   <div className="field-60">
-                    <p>2008</p>
+                    <p>{founded}</p>
                   </div>
                 </li>
 
@@ -340,7 +365,7 @@ export default function Area() {
                   </div>
 
                   <div className="field-60">
-                    <p>Golf East Co. (Appliances)</p>
+                    <p>{designer}</p>
                   </div>
                 </li>
 
@@ -354,8 +379,7 @@ export default function Area() {
 
                   <div className="field-60">
                     <p>
-                      The city center is 20 minute walking distance from the
-                      hotel
+                      {distance}
                     </p>
                   </div>
                 </li>
@@ -369,7 +393,7 @@ export default function Area() {
                   </div>
 
                   <div className="field-60">
-                    <p>Forced. Included in price, max 1 person per car.</p>
+                    <p>{golfCarts}</p>
                   </div>
                 </li>
 
@@ -382,7 +406,7 @@ export default function Area() {
                   </div>
 
                   <div className="field-60">
-                    <p>1000 THB</p>
+                    <p>{bearing}</p>
                   </div>
                 </li>
 
@@ -395,7 +419,7 @@ export default function Area() {
                   </div>
 
                   <div className="field-60">
-                    <p>Can be rented for 200 THB</p>
+                    <p>{golfShoes}</p>
                   </div>
                 </li>
                 <li>
@@ -407,7 +431,7 @@ export default function Area() {
                   </div>
 
                   <div className="field-60">
-                    <p>Can be rented for 150 THB</p>
+                    <p>{umbrella}</p>
                   </div>
                 </li>
                 <li>
@@ -419,7 +443,7 @@ export default function Area() {
                   </div>
 
                   <div className="field-60">
-                    <p>4</p>
+                    <p>{maxNumberOfPlayersPerGroup}</p>
                   </div>
                 </li>
 
@@ -433,7 +457,7 @@ export default function Area() {
                   </div>
 
                   <div className="field-60">
-                    <p>The monkey every day</p>
+                    <p>{open}</p>
                   </div>
                 </li>
 
@@ -447,7 +471,7 @@ export default function Area() {
                   </div>
 
                   <div className="field-60">
-                    <p>Yes</p>
+                    <p>{drivingRange}</p>
                   </div>
                 </li>
 
@@ -460,7 +484,7 @@ export default function Area() {
                   </div>
 
                   <div className="field-60">
-                    <p>Hotel, Massage, Restaurants, Spa, Swimming Pool</p>
+                    <p>{amenties}</p>
                   </div>
                 </li>
               </ul>
@@ -614,3 +638,34 @@ export default function Area() {
     </div>
   );
 }
+
+export const postBySlug =  graphql`
+  query postBySlug($id: ID!) {
+       wpcontent {
+     venue( id: $id) {
+       acf_venuefactsheet {
+        location
+        holesPairsLength
+        founded
+        designer
+        distance
+        golfCarts
+        bearing
+        golfShoes
+        umbrella
+        amenties
+        drivingRange
+        fieldGroupName
+        locationNearBy
+        maxNumberOfPlayersPerGroup
+        open
+        perPersonPrice
+        shortDetails
+        venueDetailsForPrice
+        venueMidTitle
+        venueMoreDetails
+      }
+   }
+  }
+  }
+`;

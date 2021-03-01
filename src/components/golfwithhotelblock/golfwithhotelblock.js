@@ -3,9 +3,10 @@ import {Container, Row, Col} from "react-bootstrap";
 import {BsPlus} from "@react-icons/all-files/bs/BsPlus";
 import hotelimg from "../../images/hotel.png";
 import golfimg from "../../images/sgolf.png";
+import {useStaticQuery, graphql, Link} from "gatsby";
 
 export default function Golfwithhotelblock( props ) {
-  console.log(props)
+
   return (
     <div>
       <div className="golf-info no-padding golf-plus-hotel">
@@ -43,9 +44,14 @@ export default function Golfwithhotelblock( props ) {
                   <h3 className="green-color">{props.price}</h3>
                 </div>
 
-                <a href="#" className="book-btn">
-                  Book now
-                </a>
+                   <Link
+                          to={props.slug}
+                          className="book-btn"
+                          // state={{data: venue.node}}
+                          itemProp="url"
+                        >
+                          Book now
+                        </Link>
               </div>
             </Col>
           </Row>

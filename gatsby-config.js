@@ -6,6 +6,22 @@ module.exports = {
     title: "wp-gatsby",
   },
   plugins: [
+      {
+    resolve: `gatsby-source-filesystem`,
+    options: {
+      name: `markdown-pages`,
+      path: `${__dirname}/src/markdown-pages`,
+    },
+  },
+  {
+    resolve: `gatsby-source-filesystem`,
+    options: {
+      path: `${__dirname}/src/markdown-pages`,
+      name: `markdown-pages`,
+    },
+  },
+  `gatsby-transformer-remark`,
+
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
@@ -22,7 +38,7 @@ module.exports = {
         typeName: "WPGraphQL",
         fieldName: "wpcontent",
         // GraphQL endpoint, relative to your WordPress home URL.
-        url:  `${process.env.WPGRAPHQL_URL}/graphql}`,
+        url:  `http://devwork.live/golfaisa/graphql`,
         // GraphQL endpoint using env variable
        // url: "${process.env.WORDPRESS_URL}/graphql",
       },

@@ -7,6 +7,7 @@ import {FaChevronLeft} from "@react-icons/all-files/fa/FaChevronLeft";
 import {FaChevronRight} from "@react-icons/all-files/fa/FaChevronRight";
 
 export default function Golfwithhotelslider(props) {
+
   const slider = useRef();
 
   const next = () => {
@@ -88,6 +89,7 @@ export default function Golfwithhotelslider(props) {
                         title={s.node.title} 
                         detail={s.node.acf_venuefactsheet.shortDetails} 
                         price={s.node.acf_venueprice.pricePerPersonWeekday}
+                        slug={s.node.slug}
                     />
                   )}
                   

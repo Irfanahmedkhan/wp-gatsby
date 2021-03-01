@@ -1,13 +1,13 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import logo from "../../images/logo.png";
 import language from "../../images/lang.png";
-import {Navbar, Nav, Container, NavDropdown, Row, Col} from "react-bootstrap";
-import {BsSearch} from "@react-icons/all-files/bs/BsSearch";
-import {IoIosMail} from "@react-icons/all-files/io/IoIosMail";
-import {FaPhoneVolume} from "@react-icons/all-files/fa/FaPhoneVolume";
-import {FaFacebookF} from "@react-icons/all-files/fa/FaFacebookF";
+import { Navbar, Nav, Container, NavDropdown, Row, Col } from "react-bootstrap";
+import { BsSearch } from "@react-icons/all-files/bs/BsSearch";
+import { IoIosMail } from "@react-icons/all-files/io/IoIosMail";
+import { FaPhoneVolume } from "@react-icons/all-files/fa/FaPhoneVolume";
+import { FaFacebookF } from "@react-icons/all-files/fa/FaFacebookF";
 
-import {Link, useStaticQuery, graphql } from "gatsby";
+import { Link, useStaticQuery, graphql } from "gatsby";
 
 export default function Head() {
   const [state, setState] = useState({
@@ -22,17 +22,17 @@ export default function Head() {
 
   const data = useStaticQuery(graphql`
     query {
-        wpcontent {
-          cities {
-            edges {
-              node {
-                name
-              }
+      wpcontent {
+        cities {
+          edges {
+            node {
+              name
             }
           }
-          }
+        }
+      }
     }
-  `)
+  `);
   return (
     <>
       <div className="custom-header">
@@ -87,15 +87,13 @@ export default function Head() {
                     <Col xs={8}>
                       {/* <h5 className="menutitle"> Thailand</h5> */}
                       <ul className="short-menu">
-                        {
-                          data.wpcontent.cities.edges.map(c => 
-                            <li key={c.node.id}>
-                              <a>
-                                <Link to="/area">{c.node.name}</Link>
-                              </a>
-                            </li>
-                          )
-                        }
+                        {data.wpcontent.cities.edges.map((c) => (
+                          <li key={c.node.id}>
+                            <a>
+                              <Link to="/area">{c.node.name}</Link>
+                            </a>
+                          </li>
+                        ))}
                         {/* <li>
                           <a>
                             <Link to="/area">Bangkok</Link>

@@ -1,8 +1,8 @@
-import React, {useRef, useState} from "react";
+import React, {useRef} from "react";
 import Slider from "react-slick";
 import {useStaticQuery, graphql, Link} from "gatsby";
-import Golfwithsliderhotel from "../golfwithhotelslider/golfwithhotelslider";
-import Testimonialslider from "../testimonialslider/testimonialslider";
+import Golfwithsliderhotel from "../components/golfwithhotelslider/golfwithhotelslider";
+import Testimonialslider from "../components/testimonialslider/testimonialslider";
 
 import {Container, Row, Col, Tabs, Tab, Button, Form} from "react-bootstrap";
 
@@ -21,22 +21,22 @@ import {FaChevronLeft} from "@react-icons/all-files/fa/FaChevronLeft";
 // import { BiLike  } from "@react-icons/all-files/bi/BiLike";
 // import { BiSupport  } from "@react-icons/all-files/bi/BiSupport";
 
-import slideimg from "../../images/slider-1.png";
-import destimage from "../../images/destication.png";
+import slideimg from "../images/slider-1.png";
+import destimage from "../images/destication.png";
 
-import featureimg from "../../images/featured.png";
+import featureimg from "../images/featured.png";
 
-import high1 from "../../images/sale.png";
-import high2 from "../../images/24-hr.png";
-import high3 from "../../images/clock.png";
-import high4 from "../../images/like.png";
+import high1 from "../images/sale.png";
+import high2 from "../images/24-hr.png";
+import high3 from "../images/clock.png";
+import high4 from "../images/like.png";
 
 // import TabContent from 'react-bootstrap/TabContent';
 
 export default function PreviousNextMethods() {
 
-const [pageNo, setpageNo] = useState(3)
 
+console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaa');
   const slider = useRef();
 
   const next = () => {
@@ -352,7 +352,7 @@ const [pageNo, setpageNo] = useState(3)
 
             <Col md={12}>
               <ul className="popular-dest">
-                {data.wpcontent.venues.edges.slice(0, pageNo).map((venue) => (
+                {data.wpcontent.venues.edges.map((venue) => (
                   <li key={venue.node.id}>
                     <span className="featured-badge">
                       <img src={featureimg} className="img-fluid" />
@@ -404,9 +404,7 @@ const [pageNo, setpageNo] = useState(3)
                 ))}
               </ul>
 
-              <button className="load-more btn-orange" onClick = {() => setpageNo(20)}>
-                load more destinations
-              </button>
+              
             </Col>
           </Row>
         </Container>
