@@ -29,9 +29,10 @@ export default function Golfwithhotelblock( props ) {
             <Col lg={9} md={12} xs={12}>
               <div className="golf-houe">
                 <h4>{props.title}</h4>
-                <p>
+                {/* <p>
                   {props.detail}
-                </p>
+                </p> */}
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam elestie velit, sit amet sodales orci tellus euiod felis. Lorem ipsum dolor sit amet, consectetur.</p>
               </div>
             </Col>
 
