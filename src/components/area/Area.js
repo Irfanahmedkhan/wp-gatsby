@@ -28,7 +28,7 @@ import driving from "../../images/golfer-eps.png";
 
 import destimage from "../../images/destication.png";
 
-export default function Area() {
+export default function Area(props) {
   return (
     <div>
       <section className="hero-banner">
@@ -38,16 +38,14 @@ export default function Area() {
             <Row>
               <Col md={6}>
                 <div className="area-content text-white">
-                  <h1 className="heading ">Banyan Golf Hua Hin</h1>
+                  <h1 className="heading ">{props.area.title}</h1>
                   <h6 className="sub-heading text-uppercase mb-4">
                     <FaMapMarkerAlt />
                     Thailand
                   </h6>
 
                   <p>
-                    The golf course is recognized as one of{" "}
-                    <b>the best new courses in Southeast Asia </b>and a must on
-                    your golf vacation in Hua Hin.
+                    {props.area.acf_venuefactsheet.shortDetails}
                   </p>
                 </div>
               </Col>
@@ -175,53 +173,27 @@ export default function Area() {
           <Row>
             <Col md={12}>
               <h3 className="special-title pl-5 pr-5 mt-3 mb-5">
-                Banyan is one of the newer courses in Hua Hin and it is nothing
-                short of a fantastic golf course.
+                {props.area.acf_venuefactsheet.venueMidTitle}
               </h3>
             </Col>
 
             <Col md={12}>
               <div className="mb-5">
-                <Featuredslider />
+                <Featuredslider img={props.area.acf_venuefactsheet.venueMultipleImagesSlider}/>
               </div>
             </Col>
 
             <Col md={6}>
               <div className="short-bio text-justify">
                 <p>
-                  BANYAN GOLF CLUB, HUA HIN - Banyan is the newest of the
-                  courses in Hua Hin, and it must be noted that it is also a
-                  very ambitious golf course. GolfEAST, which has designed and
-                  been responsible for the establishment of the course, is also
-                  behind other top courses in the East. Blue Canyon on Phuket,
-                  which the Tour has used several times and ranks high.{" "}
+                {props.area.acf_venuefactsheet.venueMoreDetails}
                 </p>
 
                 <p>
-                  {" "}
-                  GolfEAST even believes that Banyan has the opportunity to
-                  become one of the very best courses in Southeast Asia. It is a
-                  beautiful sight that one encounters when entering The Banyan.
-                  The course is beautifully integrated into the nature between
-                  trees and rocks. Challenges like lakes are at play in five
-                  holes, and a stream crosses six holes. The course is in par
-                  72. The most beautiful sight can be found at the tea spot on
-                  hole 15.
+                {props.area.acf_venuefactsheet.venueMoreDetails}
                 </p>
 
-                <p>
-                  Here you can see the mountains around and the blue sea in the
-                  background. With GolfAsia.dk you can also choose to stay in
-                  one of the 5 star villas on the golf course. Some with private
-                  pool and many with plenty of room for four adults.{" "}
-                </p>
-
-                <p>
-                  Banyan is thus a wonderful overall experience when you go on
-                  vacation and play golf at the same time. As with the other
-                  courses in the area, there are great clubhouse and restaurant
-                  facilities.
-                </p>
+                
               </div>
             </Col>
 
@@ -240,13 +212,13 @@ export default function Area() {
                 <h4>Price in THB per person</h4>
                 <div className="person-1 no-left-border">
                   <h6>weekdays</h6>
-                  <h4>3900 THB</h4>
+                  <h4>{props.area.acf_venueprice.pricePerPersonWeekday}</h4>
                   <p>PER PERSON</p>
                 </div>
 
                 <div className="person-1">
-                  <h6>weekdays</h6>
-                  <h4>3900 THB</h4>
+                  <h6>weekend</h6>
+                  <h4>{props.area.acf_venueprice.pricePerPersonWeekend}</h4>
                   <p>PER PERSON</p>
                 </div>
 
@@ -258,7 +230,7 @@ export default function Area() {
                 </p>
               </div>
 
-              <div className="price-per-person mt-3 mb-0">
+              {/* <div className="price-per-person mt-3 mb-0">
                 <h4>Price in THB per person</h4>
                 <div className="person-1 no-left-border">
                   <h6>weekdays</h6>
@@ -278,7 +250,7 @@ export default function Area() {
                     Contact us for any discount price between 01 May - 31 Oct
                   </i>
                 </p>
-              </div>
+              </div> */}
             </Col>
 
             <Col md={12}>
@@ -301,7 +273,7 @@ export default function Area() {
                   </div>
 
                   <div className="field-60">
-                    <p>9 kilometers south of Hua Hin</p>
+                    <p>{props.area.acf_venuefactsheet.location}</p>
                   </div>
                 </li>
 
@@ -314,7 +286,7 @@ export default function Area() {
                   </div>
 
                   <div className="field-60">
-                    <p>18 holes par 72 (7361 yards)</p>
+                    <p>{props.area.acf_venuefactsheet.holesPairsLength}</p>
                   </div>
                 </li>
 
@@ -327,7 +299,7 @@ export default function Area() {
                   </div>
 
                   <div className="field-60">
-                    <p>2008</p>
+                    <p>{props.area.acf_venuefactsheet.founded}</p>
                   </div>
                 </li>
 
@@ -340,7 +312,7 @@ export default function Area() {
                   </div>
 
                   <div className="field-60">
-                    <p>Golf East Co. (Appliances)</p>
+                    <p>{props.area.acf_venuefactsheet.designer}</p>
                   </div>
                 </li>
 
@@ -354,8 +326,7 @@ export default function Area() {
 
                   <div className="field-60">
                     <p>
-                      The city center is 20 minute walking distance from the
-                      hotel
+                    {props.area.acf_venuefactsheet.distance}
                     </p>
                   </div>
                 </li>
@@ -369,7 +340,7 @@ export default function Area() {
                   </div>
 
                   <div className="field-60">
-                    <p>Forced. Included in price, max 1 person per car.</p>
+                    <p>{props.area.acf_venuefactsheet.golfCarts}</p>
                   </div>
                 </li>
 
@@ -382,7 +353,7 @@ export default function Area() {
                   </div>
 
                   <div className="field-60">
-                    <p>1000 THB</p>
+                    <p>{props.area.acf_venuefactsheet.bearing}</p>
                   </div>
                 </li>
 
@@ -395,7 +366,7 @@ export default function Area() {
                   </div>
 
                   <div className="field-60">
-                    <p>Can be rented for 200 THB</p>
+                    <p>{props.area.acf_venuefactsheet.golfShoes}</p>
                   </div>
                 </li>
                 <li>
@@ -407,7 +378,7 @@ export default function Area() {
                   </div>
 
                   <div className="field-60">
-                    <p>Can be rented for 150 THB</p>
+                    <p>{props.area.acf_venuefactsheet.umbrella}</p>
                   </div>
                 </li>
                 <li>
@@ -419,7 +390,7 @@ export default function Area() {
                   </div>
 
                   <div className="field-60">
-                    <p>4</p>
+                    <p>{props.area.acf_venuefactsheet.maxNumberOfPlayersPerGroup}</p>
                   </div>
                 </li>
 
@@ -433,7 +404,7 @@ export default function Area() {
                   </div>
 
                   <div className="field-60">
-                    <p>The monkey every day</p>
+                    <p>{props.area.acf_venuefactsheet.open}</p>
                   </div>
                 </li>
 
@@ -447,7 +418,7 @@ export default function Area() {
                   </div>
 
                   <div className="field-60">
-                    <p>Yes</p>
+                    <p>{props.area.acf_venuefactsheet.drivingRange}</p>
                   </div>
                 </li>
 
@@ -460,7 +431,7 @@ export default function Area() {
                   </div>
 
                   <div className="field-60">
-                    <p>Hotel, Massage, Restaurants, Spa, Swimming Pool</p>
+                    <p>{props.area.acf_venuefactsheet.amenties}</p>
                   </div>
                 </li>
               </ul>

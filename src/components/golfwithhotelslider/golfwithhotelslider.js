@@ -6,7 +6,7 @@ import Golfwithhotelblock from "../golfwithhotelblock/golfwithhotelblock";
 import {FaChevronLeft} from "@react-icons/all-files/fa/FaChevronLeft";
 import {FaChevronRight} from "@react-icons/all-files/fa/FaChevronRight";
 
-export default function Golfwithhotelslider() {
+export default function Golfwithhotelslider(props) {
   const slider = useRef();
 
   const next = () => {
@@ -83,11 +83,18 @@ export default function Golfwithhotelslider() {
             <Col md={12}>
               <div className="golf-plus-box">
                 <Slider ref={(c) => (slider.current = c)} {...settings2}>
+                  {props.data.map(s=>
+                    <Golfwithhotelblock 
+                        title={s.node.title} 
+                        detail={s.node.acf_venuefactsheet.shortDetails} 
+                        price={s.node.acf_venueprice.pricePerPersonWeekday}
+                    />
+                  )}
+                  
+{/* 
                   <Golfwithhotelblock />
 
-                  <Golfwithhotelblock />
-
-                  <Golfwithhotelblock />
+                  <Golfwithhotelblock /> */}
                 </Slider>
               </div>
             </Col>

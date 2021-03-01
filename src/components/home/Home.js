@@ -1,6 +1,6 @@
 import React, {useRef} from "react";
 import Slider from "react-slick";
-import { useStaticQuery, graphql } from 'gatsby'
+import {useStaticQuery, graphql, Link} from "gatsby";
 import Golfwithsliderhotel from "../golfwithhotelslider/golfwithhotelslider";
 import Testimonialslider from "../testimonialslider/testimonialslider";
 
@@ -84,26 +84,49 @@ export default function PreviousNextMethods() {
 
   const data = useStaticQuery(graphql`
     query {
-        wpcontent {
-            venues {
-                edges {
-                    node {
-                        id
-                        title
-                        slug
-                        acf_venuefactsheet {
-                          venueMultipleImagesSlider {
-                            addImage {
-                              sourceUrl
-                            }
-                          }
-                        }
-                        }
+      wpcontent {
+        venues(first: 6) {
+          edges {
+            node {
+              id
+              title
+              slug
+              acf_venuefactsheet {
+                shortDetails
+                venueMoreDetails
+                venueMidTitle
+                location
+                holesPairsLength
+                founded
+                designer
+                distance
+                golfCarts
+                bearing
+                golfShoes
+                umbrella
+                maxNumberOfPlayersPerGroup
+                open
+                drivingRange
+                amenties
+                venueMultipleImagesSlider {
+                  addImage {
+                    sourceUrl
+                  }
                 }
+              }
+              acf_venueprice {
+                pricePerPersonWeekday
+                pricePerPersonWeekend
+              }
+              acf_venueavaliable {
+                venueIsApplicableFor
+              }
             }
           }
+        }
+      }
     }
-  `)
+  `);
   return (
     <div className="main">
       <div className="home-slider">
@@ -326,47 +349,55 @@ export default function PreviousNextMethods() {
 
             <Col md={12}>
               <ul className="popular-dest">
-                {
-                    data.wpcontent.venues.edges.map( venue => 
-                        <li key={venue.node.id}>
-                        <span className="featured-badge">
-                            <img src={featureimg} className="img-fluid" />
-                        </span>
-                        <img src={venue.node.acf_venuefactsheet.venueMultipleImagesSlider[0].addImage.sourceUrl} className="img-fluid" />
+                {data.wpcontent.venues.edges.map((venue) => (
+                  <li key={venue.node.id}>
+                    <span className="featured-badge">
+                      <img src={featureimg} className="img-fluid" />
+                    </span>
+                    <img
+                      src={
+                        venue.node.acf_venuefactsheet
+                          .venueMultipleImagesSlider[0].addImage.sourceUrl
+                      }
+                      className="img-box"
+                    />
 
                     <div className="product-inquiry">
-                        <h3>{venue.node.title}</h3>
-                        <p>
-                        <FaMapMarkerAlt /> &nbsp;&nbsp;Thailand
-                        </p>
+                      <h5>{venue.node.title}</h5>
+                      <p>
+                        <FaMapMarkerAlt /> &nbsp;&nbsp;
+                        {venue.node.acf_venuefactsheet.location}
+                      </p>
 
-                        <div className="review-box">
+                      <div className="review-box">
                         <ul className="star">
-                            <li>
+                          <li>
                             <FaStar />
-                            </li>
-                            <li>
+                          </li>
+                          <li>
                             <FaStar />
-                            </li>
-                            <li>
+                          </li>
+                          <li>
                             <FaStar />
-                            </li>
-                            <li>
+                          </li>
+                          <li>
                             <FaStar />
-                            </li>
-                            <li>
+                          </li>
+                          <li>
                             <FaStarHalfAlt />
-                            </li>
+                          </li>
                         </ul>
-
-                        <a href="#" className="booknow">
-                            Book now
-                        </a>
-                        </div>
-                  </div>
-                </li>
-                    )
-                }
+                        <Link
+                          to="/area"
+                          className="booknow"
+                          state={{data: venue.node}}
+                        >
+                          Book now
+                        </Link>
+                      </div>
+                    </div>
+                  </li>
+                ))}
               </ul>
 
               <a href="#" className="load-more btn-orange">
@@ -377,7 +408,7 @@ export default function PreviousNextMethods() {
         </Container>
       </section>
 
-      <Golfwithsliderhotel />
+      <Golfwithsliderhotel data={data.wpcontent.venues.edges} />
 
       <section className="any-question text-white">
         <Container>

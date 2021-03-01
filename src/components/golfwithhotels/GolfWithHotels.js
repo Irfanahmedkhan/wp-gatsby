@@ -58,7 +58,7 @@ export default function GolfWithHotel() {
       }
     }
   `)
-  
+
   return (
     <div>
       <section className="hero-banner-short">
@@ -244,8 +244,8 @@ export default function GolfWithHotel() {
               <Row>
                 {
                   data.wpcontent.venues.edges
-                  .filter(f=>f.node.acf_venueavaliable.venueIsApplicableFor != 'For Hotel')
-                  .map(a => 
+                  .filter(f => f.node.acf_venueavaliable.venueIsApplicableFor != 'For Hotel').map(a => 
+                   
                     <Col md={6}>
                       <Golfwithhotelblock 
                         title={a.node.title} 

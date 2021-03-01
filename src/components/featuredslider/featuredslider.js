@@ -6,7 +6,7 @@ import {  FaChevronRight } from "@react-icons/all-files/fa/FaChevronRight";
 import {FaStar} from "@react-icons/all-files/fa/FaStar";
 import herobg from '../../images/slider-1.png';
 
-export default function Featuredslider() {
+export default function Featuredslider(props) {
         
 
     const slider = useRef();

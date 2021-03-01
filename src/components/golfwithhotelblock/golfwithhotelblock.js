@@ -5,7 +5,7 @@ import hotelimg from "../../images/hotel.png";
 import golfimg from "../../images/sgolf.png";
 
 export default function Golfwithhotelblock( props ) {
-  // console.log(props)
+  console.log(props)
   return (
     <div>
       <div className="golf-info no-padding golf-plus-hotel">

@@ -1983,3 +1983,11 @@ ul.foot-menu {
 }
 
 }
+
+/* ########### */
+
+img.img-box{
+  height: 440px;
+  width: 100%;
+  background-position: center; 
+}
