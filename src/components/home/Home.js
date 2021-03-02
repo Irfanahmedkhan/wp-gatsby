@@ -130,6 +130,9 @@ const [pageNo, setpageNo] = useState(3)
       }
     }
   `);
+
+    const NumberOfQuries = data.wpcontent.venues.edges;
+
   return (
     <div className="main">
       <div className="home-slider">
@@ -403,10 +406,8 @@ const [pageNo, setpageNo] = useState(3)
                   </li>
                 ))}
               </ul>
-
-              <button className="load-more btn-orange" onClick = {() => setpageNo(20)}>
-                load more destinations
-              </button>
+{pageNo < NumberOfQuries.length ? <button className="load-more btn-orange" onClick = {() => setpageNo(NumberOfQuries.length)}> Show more</button> : <button className="load-more btn-orange" onClick = {() => setpageNo(5)}> Show Less</button>}
+              
             </Col>
           </Row>
         </Container>

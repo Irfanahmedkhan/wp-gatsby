@@ -628,7 +628,7 @@ export default function Area({data}) {
               <a
                 href="#"
                 className="btn btn-orange full-width-btn mt-0 text-white"
-              >
+              >g
                 FAQ
               </a>
             </Col>
