@@ -1,7 +1,7 @@
 import React from "react";
 import {Container, Row, Col, Form, Button} from "react-bootstrap";
-import Golfwithhotelblock from "../golfwithhotelblock/golfwithhotelblock";
-import Featuredslder from "../featuredslider/featuredslider";
+import Golfwithhotelblock from "../components/golfwithhotelblock/golfwithhotelblock";
+import Featuredslder from "../components/featuredslider/featuredslider";
 import {MdGolfCourse} from "@react-icons/all-files/md/MdGolfCourse";
 import {FaRegCalendarAlt} from "@react-icons/all-files/fa/FaRegCalendarAlt";
 import {FaRegClock} from "@react-icons/all-files/fa/FaRegClock";
@@ -9,66 +9,56 @@ import {FaEnvelope} from "@react-icons/all-files/fa/FaEnvelope";
 import {FaUserAlt} from "@react-icons/all-files/fa/FaUserAlt";
 import {FaMapMarkerAlt} from "@react-icons/all-files/fa/FaMapMarkerAlt";
 import {FaUserPlus} from "@react-icons/all-files/fa/FaUserPlus";
-import herobg from "../../images/slider-1.png";
+import herobg from "../images/slider-1.png";
 import { useStaticQuery, graphql } from 'gatsby'
 
-console.log('golf with hotel');
+export default function GolfWithHotel() {
 
-export default function GolfWithHotel({data}) {
-console.log(data,'location');
+  const data = useStaticQuery(graphql`
+    query {
+      wpcontent {
+        venue(id: "cG9zdDo3Ng==") {
+          title
+          id
+          acf_venueprice {
+            pricePerPersonBottomWeekend
+          }
+          acf_venuefactsheet {
+            shortDetails
+            venueMultipleImagesSlider {
+              addImage {
+                sourceUrl
+              }
+            }
+          }
+        }
+        venues {
+          edges {
+            node {
+              id
+              slug
+              title
+              acf_venueavaliable {
+                venueIsApplicableFor
+              }
+              acf_venuefactsheet {
+                shortDetails
+                venueMultipleImagesSlider {
+                  addImage {
+                    sourceUrl
+                  }
+                }
+              }
+              acf_venueprice {
+                pricePerPersonWeekday
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
 
-  // const data = useStaticQuery(graphql`
-  //   query cityData ($id: ID!) {
-  //     wpcontent {
-
-  //           menuItem(id: $id) {
-  //     label
-  //     id
-  //   }
-  //       venue(id: "cG9zdDo2NA==") {
-  //         title
-  //         id
-  //         acf_venueprice {
-  //           pricePerPersonBottomWeekend
-  //         }
-  //         acf_venuefactsheet {
-  //           shortDetails
-  //           venueMultipleImagesSlider {
-  //             addImage {
-  //               sourceUrl
-  //             }
-  //           }
-  //         }
-  //       }
-  //       venues {
-  //         edges {
-  //           node {
-  //             id
-  //             slug
-  //             title
-  //             acf_venueavaliable {
-  //               venueIsApplicableFor
-  //             }
-  //             acf_venuefactsheet {
-  //               shortDetails
-  //               venueMultipleImagesSlider {
-  //                 addImage {
-  //                   sourceUrl
-  //                 }
-  //               }
-  //             }
-  //             acf_venueprice {
-  //               pricePerPersonWeekday
-  //             }
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // `)
-        const aaa = data.wpcontent.menuItem.label
-
-console.log(aaa);
   return (
     <div>
       <section className="hero-banner-short">
@@ -182,10 +172,10 @@ console.log(aaa);
               <div className="featured-slide-lr d-flex align-items-center justify-content-center">
                 <div className="new-box">
                   <div className="green-room">
-                    <h3>{data.wpcontent.menuItem.label}</h3>
+                    <h3>{data.wpcontent.venue.title}</h3>
 
                     <p className="text-justify">
-                      {/* {data.wpcontent.venue.acf_venuefactsheet.shortDetails} */}
+                      {data.wpcontent.venue.acf_venuefactsheet.shortDetails}
                     </p>
 
                     <div className="golf-bio">
@@ -196,7 +186,7 @@ console.log(aaa);
                               <strong>The price starts from</strong>
                             </p>
                             <h3 className="green-color mb-0">
-                              {/* <strong>{data.wpcontent.venue.acf_venueprice.pricePerPersonBottomWeekend}</strong> */}
+                              <strong>{data.wpcontent.venue.acf_venueprice.pricePerPersonBottomWeekend}</strong>
                             </h3>
                           </div>
                         </Col>
@@ -273,58 +263,3 @@ console.log(aaa);
     </div>
   );
 }
-
-
-export const cityBySlug =  graphql`
-  query cityBySlug($id: ID!) {
-       wpcontent {
-
-            menuItem(id: $id) {
-      label
-      id
-    }
-       
-
-
-        venues {
-          edges {
-            node {
-              id
-              slug
-              title
-              acf_venueavaliable {
-                venueIsApplicableFor
-              }
-              acf_venuefactsheet {
-                shortDetails
-                venueMultipleImagesSlider {
-                  addImage {
-                    sourceUrl
-                  }
-                }
-              }
-              acf_venueprice {
-                pricePerPersonWeekday
-              }
-            }
-          }
-        }
-      }
-  }
-`;
-
- // venue(id: "cG9zdDo2NA==") {
-        //   title
-        //   id
-        //   acf_venueprice {
-        //     pricePerPersonBottomWeekend
-        //   }
-        //   acf_venuefactsheet {
-        //     shortDetails
-        //     venueMultipleImagesSlider {
-        //       addImage {
-        //         sourceUrl
-        //       }
-        //     }
-        //   }
-        // }

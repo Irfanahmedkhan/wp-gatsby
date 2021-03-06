@@ -1,25 +1,18 @@
-import React, {useRef, useState} from "react";
+import React, { useRef, useState } from "react";
 import Slider from "react-slick";
-import {useStaticQuery, graphql, Link} from "gatsby";
+import { useStaticQuery, graphql, Link } from "gatsby";
 import Golfwithsliderhotel from "../golfwithhotelslider/golfwithhotelslider";
 import Testimonialslider from "../testimonialslider/testimonialslider";
 
-import {Container, Row, Col, Tabs, Tab, Button, Form} from "react-bootstrap";
+import { Container, Row, Col, Tabs, Tab, Button, Form } from "react-bootstrap";
 
-import {FaRegCalendarAlt} from "@react-icons/all-files/fa/FaRegCalendarAlt";
-// import { FaPencilAlt  } from "@react-icons/all-files/fa/FaPencilAlt";
-// import { FaUserAlt  } from "@react-icons/all-files/fa/FaUserAlt";
-// import { FaEnvelope  } from "@react-icons/all-files/fa/FaEnvelope";
-// import { FaPhoneAlt  } from "@react-icons/all-files/fa/FaPhoneAlt";
-import {FaStarHalfAlt} from "@react-icons/all-files/fa/FaStarHalfAlt";
-import {FaStar} from "@react-icons/all-files/fa/FaStar";
-import {FaRegClock} from "@react-icons/all-files/fa/FaRegClock";
-// import { FaPercent  } from "@react-icons/all-files/fa/FaPercent";
-import {FaMapMarkerAlt} from "@react-icons/all-files/fa/FaMapMarkerAlt";
-import {FaChevronRight} from "@react-icons/all-files/fa/FaChevronRight";
-import {FaChevronLeft} from "@react-icons/all-files/fa/FaChevronLeft";
-// import { BiLike  } from "@react-icons/all-files/bi/BiLike";
-// import { BiSupport  } from "@react-icons/all-files/bi/BiSupport";
+import { FaRegCalendarAlt } from "@react-icons/all-files/fa/FaRegCalendarAlt";
+import { FaStarHalfAlt } from "@react-icons/all-files/fa/FaStarHalfAlt";
+import { FaStar } from "@react-icons/all-files/fa/FaStar";
+import { FaRegClock } from "@react-icons/all-files/fa/FaRegClock";
+import { FaMapMarkerAlt } from "@react-icons/all-files/fa/FaMapMarkerAlt";
+import { FaChevronRight } from "@react-icons/all-files/fa/FaChevronRight";
+import { FaChevronLeft } from "@react-icons/all-files/fa/FaChevronLeft";
 
 import slideimg from "../../images/slider-1.png";
 import destimage from "../../images/destication.png";
@@ -34,8 +27,7 @@ import high4 from "../../images/like.png";
 // import TabContent from 'react-bootstrap/TabContent';
 
 export default function PreviousNextMethods() {
-
-const [pageNo, setpageNo] = useState(3)
+  const [pageNo, setpageNo] = useState(3);
 
   const slider = useRef();
 
@@ -84,10 +76,30 @@ const [pageNo, setpageNo] = useState(3)
       // instead of a settings object
     ],
   };
+  const linkStyle = {
+    fontStyle: "none",
+    fontSize: 25,
+    background: "#e35e0d",
+    padding: "18px 25px",
+    textDecoration: "none",
+    color: "white",
+    borderRadius: "5px",
+    alignItems: "center",
+    position: "relative",
+    top : "15px"
+  };
 
   const data = useStaticQuery(graphql`
     query {
       wpcontent {
+        menuItems {
+          edges {
+            node {
+              id
+              label
+            }
+          }
+        }
         venues {
           edges {
             node {
@@ -131,8 +143,24 @@ const [pageNo, setpageNo] = useState(3)
     }
   `);
 
-    const NumberOfQuries = data.wpcontent.venues.edges;
+  const NumberOfQuries = data.wpcontent.venues.edges;
+  const citiesData = data.wpcontent.menuItems.edges;
+  const [selectedCity, setselectedCity] = useState([]);
+  const [cityData, setcityData] = useState({
+    node: { id: "cG9zdDoxMjc=", label: "Area" },
+  });
+  const test = (e) => {
+    console.log(citiesData);
+    setselectedCity(e.target.value);
 
+    for (let index = 0; index < citiesData.length; index++) {
+      if (e.target.value === citiesData[index].node.label) {
+        setcityData(citiesData[index]);
+      }
+    }
+  };
+
+  console.log("cityData", cityData);
   return (
     <div className="main">
       <div className="home-slider">
@@ -219,7 +247,7 @@ const [pageNo, setpageNo] = useState(3)
                           type="text"
                           placeholder="WHERE"
                           className="location-icon"
-                        />
+                        ></Form.Control>
 
                         <span className="custom-icon">
                           <FaMapMarkerAlt />
@@ -269,7 +297,15 @@ const [pageNo, setpageNo] = useState(3)
                   <Row>
                     <Col md={6} lg={3}>
                       <Form.Group>
-                        <Form.Control type="text" placeholder="WHERE" />
+                        <Form.Control
+                          as="select"
+                          placeholder="WHERE+"
+                          onChange={test}
+                        >
+                          {citiesData.map((c) => (
+                            <option>{c.node.label}</option>
+                          ))}
+                        </Form.Control>
                       </Form.Group>
                     </Col>
 
@@ -290,7 +326,14 @@ const [pageNo, setpageNo] = useState(3)
                     </Col>
 
                     <Col md={6} lg={3}>
-                      <Button className="search">search now</Button>
+                      <Link
+                        to={cityData.node.label}
+                        state={{ data: cityData.node.id }}
+                        style={linkStyle}
+                        itemProp="url"
+                      >
+                        SEARCH NOW
+                      </Link>
                     </Col>
                   </Row>
                 </div>
@@ -363,7 +406,10 @@ const [pageNo, setpageNo] = useState(3)
                     <img
                       src={
                         venue.node.acf_venuefactsheet
-                          .venueMultipleImagesSlider[0].addImage.sourceUrl
+                          .venueMultipleImagesSlider == null
+                          ? "http://devwork.live/golfaisa/wp-content/uploads/2021/02/slider-1.abbfdb53-1.png"
+                          : venue.node.acf_venuefactsheet
+                              .venueMultipleImagesSlider[0].addImage.sourceUrl
                       }
                       className="img-box"
                     />
@@ -396,7 +442,7 @@ const [pageNo, setpageNo] = useState(3)
                         <Link
                           to={venue.node.slug}
                           className="booknow"
-                          state={{data: venue.node}}
+                          state={{ data: venue.node }}
                           itemProp="url"
                         >
                           Book now
@@ -406,8 +452,23 @@ const [pageNo, setpageNo] = useState(3)
                   </li>
                 ))}
               </ul>
-{pageNo < NumberOfQuries.length ? <button className="load-more btn-orange" onClick = {() => setpageNo(NumberOfQuries.length)}> Show more</button> : <button className="load-more btn-orange" onClick = {() => setpageNo(5)}> Show Less</button>}
-              
+              {pageNo < NumberOfQuries.length ? (
+                <button
+                  className="load-more btn-orange"
+                  onClick={() => setpageNo(NumberOfQuries.length)}
+                >
+                  {" "}
+                  Show more
+                </button>
+              ) : (
+                <button
+                  className="load-more btn-orange"
+                  onClick={() => setpageNo(5)}
+                >
+                  {" "}
+                  Show Less
+                </button>
+              )}
             </Col>
           </Row>
         </Container>

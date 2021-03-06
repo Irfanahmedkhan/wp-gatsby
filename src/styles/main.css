@@ -1,29 +1,25 @@
-
 body {
   font-family: 'Montserrat', sans-serif !important;
   font-size: var(--xsmall-font) !important;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-html{
-  scroll-behavior: smooth;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 
 /*  */
 
 a {
   text-decoration: none !important;
 }
-
 
 /*== common css==*/
 
@@ -56,9 +52,8 @@ a {
   outline: 0;
 }
 
-
-.font-24{
-  font-size:var(--medium-font)
+.font-24 {
+  font-size: var(--medium-font)
 }
 
 /*  */
@@ -79,7 +74,6 @@ a {
   background: var(--orange) !important;
   color: var(--main);
 }
-
 
 /* header */
 
@@ -143,7 +137,7 @@ a {
 .dropdown-menu {
   min-width: 400px !important;
   border-radius: 0 !important;
-  padding: 10px !important ;
+  padding: 10px !important;
 }
 
 .short-menu {
@@ -179,7 +173,6 @@ a {
   }
 }
 
-
 /*  */
 
 .custom-header .navbar-expand-lg .navbar-nav .nav-link {
@@ -195,7 +188,7 @@ a {
   transition: .2s;
 }
 
-.custom-header .navbar-expand-lg .navbar-nav > .nav-link:last-child{
+.custom-header .navbar-expand-lg .navbar-nav>.nav-link:last-child {
   padding-right: 0;
 }
 
@@ -208,9 +201,7 @@ a {
   font-weight: 600;
 }
 
-
 /*  */
-
 
 /* home page  */
 
@@ -269,7 +260,6 @@ a {
   background: url(../../src/images/slide-pattern.png) no-repeat;
   background-position: bottom;
 }
-
 
 .action-btn {
   margin-bottom: 0;
@@ -376,8 +366,6 @@ a {
   min-height: 120px;
 }
 
-
-
 .green-box row {
   width: 100%;
 }
@@ -392,20 +380,14 @@ a {
   height: 60px;
 }
 
-
 /*  */
 
 .green-box .form-group .form-control {
   padding-left: 35px;
-
   background-color: var(--main);
   background-position: 5% center;
   background-repeat: no-repeat;
 }
-
-
-
-
 
 .hight-light-text {
   font-size: var(--small-font);
@@ -432,7 +414,6 @@ a {
   background-color: var(--green);
   transform: translateY(-50%);
 }
-
 
 /*  */
 
@@ -537,7 +518,7 @@ a {
 }
 
 .price h3 {
-  font-size:var( --small-font);
+  font-size: var( --small-font);
   margin-bottom: 10px;
   font-weight: 700;
 }
@@ -600,6 +581,7 @@ a {
 }
 
 /* slick bullet */
+
 .slick-dots {
   display: flex;
   justify-content: center;
@@ -637,6 +619,7 @@ button:focus {
 }
 
 /*  */
+
 .testimonial-slide {
   padding: 0 15px;
 }
@@ -707,13 +690,13 @@ button:focus {
 }
 
 /* get in touch */
+
 .getintouch {
   background-color: var(--light-green);
   background-image: url('../../src/images/contact-bg.jpg');
   background-repeat: no-repeat;
   background-position: bottom center;
   min-height: 800px;
-
 }
 
 .addressinfo {
@@ -764,8 +747,6 @@ button:focus {
   font-weight: 700;
 }
 
-
-
 .map-address .address-info li {
   display: block;
   line-height: 30px;
@@ -779,11 +760,9 @@ button:focus {
   color: var(--green);
 }
 
-
 /*  */
 
-.form-group input,
-.form-group textarea {
+.form-group input, .form-group textarea {
   width: 100%;
   min-height: 64px;
   border-radius: 4px;
@@ -793,10 +772,8 @@ button:focus {
 }
 
 .form-group {
-
   position: relative;
 }
-
 
 .form-group span {
   position: absolute;
@@ -806,12 +783,10 @@ button:focus {
   font-size: 16px;
 }
 
-
 textarea.form-control {
   height: auto !important;
   padding-top: 20px;
 }
-
 
 .btn-orange-sendmg {
   display: table !important;
@@ -822,16 +797,11 @@ textarea.form-control {
   border: none !important;
 }
 
-
-
-
 /* footer  */
-
 
 .dynamic-footer {
   padding: 30px 0 15px
 }
-
 
 .footer-logo {
   padding-bottom: 30px;
@@ -839,14 +809,11 @@ textarea.form-control {
   border-bottom: 2px solid var(--green);
 }
 
-
 .copyright {
   display: flex;
   justify-content: space-between;
   padding-top: 15px;
 }
-
-
 
 .foot-menu {
   padding-left: 0;
@@ -870,10 +837,9 @@ textarea.form-control {
 
 /*  */
 
-.hight-light-text img{
+.hight-light-text img {
   width: 30px;
 }
-
 
 .lr-arrow {
   padding-left: 0;
@@ -884,7 +850,6 @@ textarea.form-control {
   display: inline-block;
   margin-left: 10px;
 }
-
 
 .lr-arrow li button {
   background: var(--green);
@@ -921,7 +886,6 @@ textarea.form-control {
 
 .area-hero-content {
   position: absolute;
- 
   left: 0;
   right: 0;
   bottom: 0;
@@ -939,22 +903,21 @@ textarea.form-control {
   font-size: var(--medium-font);
 }
 
-.hero-banner::before{
-background: url(../../src/images/slide-pattern.png);
-position: absolute;
-top: 0;
-bottom: 0;
-left: 0 ;
-right: 0;
-content:"";
-background-position: center bottom;
+.hero-banner::before {
+  background: url(../../src/images/slide-pattern.png);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: "";
+  background-position: center bottom;
 }
 
 input[type="radio"], input[type="checkbox"] {
   width: 20px;
   min-height: 20px;
 }
-
 
 .radio-custom {
   display: flex;
@@ -988,7 +951,6 @@ input[type="radio"], input[type="checkbox"] {
   top: 50px;
 }
 
-
 .green-from h4 {
   text-align: center;
   margin-bottom: 20px;
@@ -998,14 +960,13 @@ input[type="radio"], input[type="checkbox"] {
   border-radius: 4px;
 }
 
-.green-from 
-textarea {
+.green-from textarea {
   border-radius: 4px;
 }
 
-.special-title{
-  text-align:center;
-  font-size:var( --medium-font);
+.special-title {
+  text-align: center;
+  font-size: var( --medium-font);
   font-weight: 600;
 }
 
@@ -1035,17 +996,13 @@ textarea {
   height: 30px;
 }
 
-
 .short-bio p {
   font-size: 16px;
 }
 
-
-
-
 .alert-badge {
-  padding: 20px 30px 20px  110px;
-  background-color:#dff0df;
+  padding: 20px 30px 20px 110px;
+  background-color: #dff0df;
   position: relative;
   font-size: var(--small-font);
   font-weight: 300;
@@ -1064,14 +1021,20 @@ textarea {
   margin-bottom: 0;
 }
 
-
 .price-per-person {
   display: flex;
   flex-wrap: wrap;
   text-align: center;
 }
 
-.price-per-person > h4 {flex: 0 0 100%;margin: 15px 0;font-size: var(--small-font);text-transform: uppercase;color: var(--green);font-weight: 600;}
+.price-per-person>h4 {
+  flex: 0 0 100%;
+  margin: 15px 0;
+  font-size: var(--small-font);
+  text-transform: uppercase;
+  color: var(--green);
+  font-weight: 600;
+}
 
 .person-1 {
   flex: 0 0 50%;
@@ -1097,11 +1060,9 @@ textarea {
   margin-bottom: 0;
 }
 
-
-.no-left-border{
-  border-left:0
+.no-left-border {
+  border-left: 0
 }
-
 
 .fact-list {
   padding-left: 0;
@@ -1114,9 +1075,17 @@ textarea {
   margin: 0 -10px 20px;
 }
 
-.field-40 {flex: 0 0 40%;max-width: 40%;padding: 0 10px;}
+.field-40 {
+  flex: 0 0 40%;
+  max-width: 40%;
+  padding: 0 10px;
+}
 
-.field-60 {flex: 0 0 60%;max-width: 60%;padding: 0 10px;}
+.field-60 {
+  flex: 0 0 60%;
+  max-width: 60%;
+  padding: 0 10px;
+}
 
 .fact-list li p {
   margin-bottom: 0;
@@ -1139,7 +1108,6 @@ textarea {
   font-weight: 600;
 }
 
-
 .fact-list li p img {
   height: 20px;
   margin-right: 10px;
@@ -1147,14 +1115,16 @@ textarea {
   object-fit: contain;
 }
 
-.new-desting li {flex: 0 0 25%;}
+.new-desting li {
+  flex: 0 0 25%;
+}
 
 .new-desting li img {
-    height: 210px;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 4px;
-    position: relative;
+  height: 210px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+  position: relative;
 }
 
 .hotel-img {
@@ -1186,12 +1156,10 @@ textarea {
   height: 100%;
 }
 
-
 .hero-banner img {
   height: 700px;
   object-fit: cover;
 }
-
 
 /* golf with hotel */
 
@@ -1206,16 +1174,17 @@ section.hero-banner-short img {
   width: 100%;
   object-fit: cover;
 }
-.hero-banner-short::before{
-content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url(../../src/images/slide-pattern.png) no-repeat;
-    background-position: bottom;
-  }
+
+.hero-banner-short::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url(../../src/images/slide-pattern.png) no-repeat;
+  background-position: bottom;
+}
 
 /* golf with hotel */
 
@@ -1225,7 +1194,7 @@ content: "";
   left: 0;
   right: 0;
   text-align: center;
-  font-size:var(  --large-font)
+  font-size: var( --large-font)
 }
 
 .contact-fomr {
@@ -1240,12 +1209,10 @@ content: "";
   padding: 30px 0 0px;
 }
 
-
 .contact-fomr .form-group input, .form-group textarea {
   border-radius: 4px;
   margin-bottom: 30px;
 }
-
 
 .contact-fomr .btn {
   width: 100%;
@@ -1255,7 +1222,6 @@ content: "";
   border-color: var(--orange);
   height: 64px;
 }
-
 
 .featured-porp-1 {
   display: flex;
@@ -1268,10 +1234,9 @@ content: "";
   position: relative;
 }
 
-.featured-slide-lr img{
+.featured-slide-lr img {
   border-radius: 4px;
 }
-
 
 .green-room {
   background: var( --light-green);
@@ -1287,42 +1252,17 @@ content: "";
   font-weight: bold;
 }
 
-
-.green-room > h3 {
+.green-room>h3 {
   font-size: var(--medium-font);
   font-weight: 600;
 }
 
-
 .f-badge-1 {
-   width: 110px;
-    position: absolute;
-    top: 15px;
-    height: 30px;
-    background:url(../../src/images/green-label.png) no-repeat;
-    z-index: 1;
-    text-align: center;
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    text-transform: uppercase;
-    font-weight: 600;
-    color: #fff;
-    border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px;
-    left: -10px;
-    font-size: 15px;
-    background-size: 100% 100%;
-    background-position: left center;
-}
-
-
-.f-badge-2 {
   width: 110px;
   position: absolute;
-  top: 50px;
+  top: 15px;
   height: 30px;
-  background:url(../../src/images/orange-label.png) no-repeat;
+  background: url(../../src/images/green-label.png) no-repeat;
   z-index: 1;
   text-align: center;
   justify-content: center;
@@ -1339,7 +1279,27 @@ content: "";
   background-position: left center;
 }
 
-
+.f-badge-2 {
+  width: 110px;
+  position: absolute;
+  top: 50px;
+  height: 30px;
+  background: url(../../src/images/orange-label.png) no-repeat;
+  z-index: 1;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #fff;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  left: -10px;
+  font-size: 15px;
+  background-size: 100% 100%;
+  background-position: left center;
+}
 
 .softing-bar {
   padding: 10px 0;
@@ -1347,7 +1307,6 @@ content: "";
   border-bottom: 1px solid #e1e1e1;
   margin-bottom: 50px;
 }
-
 
 .softing-bar .form-group {
   margin-bottom: 0;
@@ -1361,7 +1320,6 @@ content: "";
   font-weight: 600;
   margin-bottom: 0;
 }
-
 
 .box-ed-2.row {
   margin: 0 -6px;
@@ -1385,6 +1343,7 @@ section.golf-box.commanPaddding.bg-light-green .golf-info.no-padding.golf-plus-h
   top: -10px;
   left: 0;
 }
+
 .suggester .product-inquiry {
   left: 0;
   right: 0;
@@ -1404,7 +1363,6 @@ section.golf-box.commanPaddding.bg-light-green .golf-info.no-padding.golf-plus-h
 /* ====responsive=== */
 
 @media screen and (min-width:992px) and (max-width:1199px) {
-
   :root {
     --xsmall-font: 1.2vw;
     --small-font: 1.4vw;
@@ -1413,31 +1371,24 @@ section.golf-box.commanPaddding.bg-light-green .golf-info.no-padding.golf-plus-h
     --large-font: 3.5vw;
     --x-large-font: 5vw;
   }
-
-  .custom-header .navbar-expand-lg .navbar-nav .nav-link{
-    padding:0 10px;
-    font-size:13px;
-
+  .custom-header .navbar-expand-lg .navbar-nav .nav-link {
+    padding: 0 10px;
+    font-size: 13px;
   }
-
   .App-logo {
     width: 100px;
-}
-
-.green-room{
-  padding: 35px;
-}
-
-.price a {
-  padding: 6px 8px;}
-
-  .test-left-right{
+  }
+  .green-room {
+    padding: 35px;
+  }
+  .price a {
+    padding: 6px 8px;
+  }
+  .test-left-right {
     left: -10px;
-    right:-10px
-  } 
-
+    right: -10px
+  }
 }
-
 
 @media screen and (min-width:768px) and (max-width:991px) {
   :root {
@@ -1451,207 +1402,34 @@ section.golf-box.commanPaddding.bg-light-green .golf-info.no-padding.golf-plus-h
   .booknow {
     padding: 3px 5px;
     font-size: 12px;
-
-  
   }
-    .star li {
-      font-size: 14px;
-      padding-right: 2px;
+  .star li {
+    font-size: 14px;
+    padding-right: 2px;
   }
-
-/*  */
-.top-nav {
-  display: none;
-}
-
-.contact-form-right li:last-child {
-  display: none;
-}
-
-/* header */
-
-.navbar-brand {
-  width: 27vw;
-  order: 1;
-}
-
-.contact-form-right {
-  order: 2;
-}
-
-.navbar-toggler {
-  color: #000;
-  order: 3;
-  padding: 0 !important;
-}
-
-.navbar-collapse {
-  order: 4;
-}
-
-.button.navbar-toggler.collapsed .navbar-toggler-icon:before {
-  -webkit-transition: all .3s ease;
-  -ms-transition: all .3s ease;
-  transition: all .3s ease;
-  position: absolute;
-  top: 4px;
-  right: 0px;
-  display: block;
-  height: 2px;
-  width: 30px;
-  background: #000;
-  content: '';
-}
-
-.navbar-toggler-icon {
-  position: relative;
-}
-
-
-
-.button.navbar-toggler.collapsed .navbar-toggler-icon:after {
-  position: absolute;
-  top: 14px;
-  right: 0px;
-  display: block;
-  height: 11px;
-  width: 30px;
-  border-top: 2px solid #000;
-  border-bottom: 2px solid #000;
-  content: '';
-}
-
-
-/*  */
-.hight-light-text {
-
-  margin-bottom: 30px;
-}
-
-.popular-dest>li {
-  flex: 0 0 50%;}
-
-  .commanPaddding {
-    padding: 30px 0;
-}
-
-.map40 {
-  padding: 30px;
-}
-.foot-menu {
-  display: none;
-}
-
-.copyright {
-  text-align: center;
-  justify-content: center;
-}
-
-
-.custom-header .navbar-expand-lg .navbar-nav .nav-link{
-  padding: 15px;
-}
-
-
-.site-title{
-  margin-bottom:30px
-}
-
-
-.images-caption img{
-  object-fit: cover;
-}
-
-.price {
-  text-align: left;
-}
-
-.getintouch{
-  min-height:740px
-}
-
-/* area */
-
-.green-from{
-  top: 0;
-}
-
-
-/*  */
-
-.hero-banner-short {
-  height: 60vh;}
-
-  .contact-fomr {
-    margin-top: -280px;
-}
-
-.featured-slide-lr {
-  flex: 0 0 100%;
-  max-width: 100%;
-  position: relative;
-}
-
-.featured-slide-lr img {
-  border-radius: 4px;
-  width: 100%;
-}
-
-.book-btn.new-wi {
-  width: 120px;
-
-}
-
-}
-
-
-
-
-
-
-
-@media screen and (max-width:767px) {
-  .commanPaddding {
-    padding: 30px 0;
-}
-  :root {
-    --xsmall-font: 3vw;
-    --small-font: 3vw;
-    --medium-font: 5vw;
-    --xmedium-font: 6vw;
-    --large-font: 7vw;
-    --x-large-font: 8vw;
-  }
-
+  /*  */
   .top-nav {
     display: none;
   }
-
   .contact-form-right li:last-child {
     display: none;
   }
-
   /* header */
-
   .navbar-brand {
     width: 27vw;
     order: 1;
   }
-
   .contact-form-right {
     order: 2;
   }
-
   .navbar-toggler {
     color: #000;
     order: 3;
     padding: 0 !important;
   }
-
   .navbar-collapse {
     order: 4;
   }
-
   .button.navbar-toggler.collapsed .navbar-toggler-icon:before {
     -webkit-transition: all .3s ease;
     -ms-transition: all .3s ease;
@@ -1665,13 +1443,9 @@ section.golf-box.commanPaddding.bg-light-green .golf-info.no-padding.golf-plus-h
     background: #000;
     content: '';
   }
-
   .navbar-toggler-icon {
     position: relative;
   }
-
-
-
   .button.navbar-toggler.collapsed .navbar-toggler-icon:after {
     position: absolute;
     top: 14px;
@@ -1683,16 +1457,134 @@ section.golf-box.commanPaddding.bg-light-green .golf-info.no-padding.golf-plus-h
     border-bottom: 2px solid #000;
     content: '';
   }
+  /*  */
+  .hight-light-text {
+    margin-bottom: 30px;
+  }
+  .popular-dest>li {
+    flex: 0 0 50%;
+  }
+  .commanPaddding {
+    padding: 30px 0;
+  }
+  .map40 {
+    padding: 30px;
+  }
+  .foot-menu {
+    display: none;
+  }
+  .copyright {
+    text-align: center;
+    justify-content: center;
+  }
+  .custom-header .navbar-expand-lg .navbar-nav .nav-link {
+    padding: 15px;
+  }
+  .site-title {
+    margin-bottom: 30px
+  }
+  .images-caption img {
+    object-fit: cover;
+  }
+  .price {
+    text-align: left;
+  }
+  .getintouch {
+    min-height: 740px
+  }
+  /* area */
+  .green-from {
+    top: 0;
+  }
+  /*  */
+  .hero-banner-short {
+    height: 60vh;
+  }
+  .contact-fomr {
+    margin-top: -280px;
+  }
+  .featured-slide-lr {
+    flex: 0 0 100%;
+    max-width: 100%;
+    position: relative;
+  }
+  .featured-slide-lr img {
+    border-radius: 4px;
+    width: 100%;
+  }
+  .book-btn.new-wi {
+    width: 120px;
+  }
+}
 
-  .short-menu{
+@media screen and (max-width:767px) {
+  .commanPaddding {
+    padding: 30px 0;
+  }
+  :root {
+    --xsmall-font: 3vw;
+    --small-font: 3vw;
+    --medium-font: 5vw;
+    --xmedium-font: 6vw;
+    --large-font: 7vw;
+    --x-large-font: 8vw;
+  }
+  .top-nav {
+    display: none;
+  }
+  .contact-form-right li:last-child {
+    display: none;
+  }
+  /* header */
+  .navbar-brand {
+    width: 27vw;
+    order: 1;
+  }
+  .contact-form-right {
+    order: 2;
+  }
+  .navbar-toggler {
+    color: #000;
+    order: 3;
+    padding: 0 !important;
+  }
+  .navbar-collapse {
+    order: 4;
+  }
+  .button.navbar-toggler.collapsed .navbar-toggler-icon:before {
+    -webkit-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    transition: all .3s ease;
+    position: absolute;
+    top: 4px;
+    right: 0px;
+    display: block;
+    height: 2px;
+    width: 30px;
+    background: #000;
+    content: '';
+  }
+  .navbar-toggler-icon {
+    position: relative;
+  }
+  .button.navbar-toggler.collapsed .navbar-toggler-icon:after {
+    position: absolute;
+    top: 14px;
+    right: 0px;
+    display: block;
+    height: 11px;
+    width: 30px;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+    content: '';
+  }
+  .short-menu {
     column-count: 1;
   }
-
   .dropdown-menu {
     min-width: 100% !important;
   }
-
-/* 
+  /* 
   .button.navbar-toggler .navbar-toggler-icon:before {
     top: 14px !important;
     background: #000;
@@ -1720,274 +1612,238 @@ section.golf-box.commanPaddding.bg-light-green .golf-info.no-padding.golf-plus-h
     transform: rotate(45deg); 
     border:none !important;
   } */
-
-
   /*  */
-  .filter-category{
-    margin-top:0
+  .filter-category {
+    margin-top: 0
   }
-
-  .mcustom-filter .nav-item.nav-link{
+  .mcustom-filter .nav-item.nav-link {
     min-width: 130px;
-    
     min-height: 50px;
-    
   }
-
   .mcustom-filter {
     margin-top: -55px;
-}
-
-.images-caption img {
-  height: 90vh;
-  object-fit: cover;
-}
-
-.slidebtn {
-  display: none;
-}
-
-.action-btn li a{
-  min-width: 130px;
-   min-height: 40px;
-}
-
-
-.hight-light-text {
-  font-size: var(--small-font);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 15px !important;
-}
-
-.hight-light-text span {
-  margin-bottom: 20px;
-}
-
-.hight-light-text span svg {
-  margin-bottom: 10px;
-  font-size: 24px;
-}
-
-.site-title {
-  padding-left: 60px;
-  margin-bottom: 30px;
-}
-
-.site-title:before{
-  width: 40px;
-}
-
-.popular-dest>li {
-  flex: 0 0 80%;}
-
+  }
+  .images-caption img {
+    height: 90vh;
+    object-fit: cover;
+  }
+  .slidebtn {
+    display: none;
+  }
+  .action-btn li a {
+    min-width: 130px;
+    min-height: 40px;
+  }
+  .hight-light-text {
+    font-size: var(--small-font);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px !important;
+  }
+  .hight-light-text span {
+    margin-bottom: 20px;
+  }
+  .hight-light-text span svg {
+    margin-bottom: 10px;
+    font-size: 24px;
+  }
+  .site-title {
+    padding-left: 60px;
+    margin-bottom: 30px;
+  }
+  .site-title:before {
+    width: 40px;
+  }
+  .popular-dest>li {
+    flex: 0 0 80%;
+  }
   .popular-dest {
     flex-wrap: nowrap;
     overflow-x: auto;
     padding-top: 10px;
-}
-
-.price a {
-  padding: 10px 10px;
-  display: table;
-}
-
-.btn.btn-orange.full-width-btn.mt-0.text-white {
-  display: table;
-  width: 120px;
-  margin-top: 10px !important;
-}
-
-.any-question, .quest{
-  text-align: center;
-  margin-bottom:10px
-}
-
-.map60 {
-  flex: 0 0 100%;
-  max-width: 100%;
-}
-
-.map40 {
-  flex: 0 0 100%;
-  max-width: 100%;
-  height: auto;
-  align-items: flex-start;
-  padding: 15px;
-}
-
-.getintouch {
-  background-size: 100% 70%;
-}
-
-ul.foot-menu {
-  display: none;
-}
-
-.test-left-right{
-  display:none;
-}
-.form-group input, .form-group textarea {
-  border-radius: 4px;
-}
-
-.btn-orange{
-  margin-top:0
-}
-
-.copyright{
-  justify-content:center
-}
-.green-box{
-  padding:15px 0;
-}
-.container-new {
-  padding: 0 !important;
-}
-.mcustom-filter nav {
-  border: none;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-}
-
-.booknow {
-  padding: 5px 7px;}
-
+  }
+  .price a {
+    padding: 10px 10px;
+    display: table;
+  }
+  .btn.btn-orange.full-width-btn.mt-0.text-white {
+    display: table;
+    width: 120px;
+    margin-top: 10px !important;
+  }
+  .any-question, .quest {
+    text-align: center;
+    margin-bottom: 10px
+  }
+  .map60 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .map40 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    height: auto;
+    align-items: flex-start;
+    padding: 15px;
+  }
+  .getintouch {
+    background-size: 100% 70%;
+  }
+  ul.foot-menu {
+    display: none;
+  }
+  .test-left-right {
+    display: none;
+  }
+  .form-group input, .form-group textarea {
+    border-radius: 4px;
+  }
+  .btn-orange {
+    margin-top: 0
+  }
+  .copyright {
+    justify-content: center
+  }
+  .green-box {
+    padding: 15px 0;
+  }
+  .container-new {
+    padding: 0 !important;
+  }
+  .mcustom-filter nav {
+    border: none;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .booknow {
+    padding: 5px 7px;
+  }
   button.btn-orange-sendmg.mr-0.ml-auto.btn.btn-primary {
     margin-left: auto;
     margin-right: auto !important;
-}
-
-.green-box .btn.btn-primary{
-  width:70%;
-  margin:0 auto;
-  display:table;
-}
-
-
-.custom-header .navbar-expand-lg .navbar-nav .nav-link{
-  padding: 15px 0;
-}
-
-/* area page */
-
-
-
-.area-content{
-  padding-right:0;
-  text-align:center;
-}
-
-.hero-banner::before{
-  background-position: 11% 500%;
-}
-.green-from {
-  top: 0;
-  margin-left: -15px;
-  margin-right: -15px;
-}
-
-.area-hero-content {
-  padding-top: 15px;
-}
-.short-bio p {
-  font-size: 14px;
-}
-.field-40, .field-60 {
-  flex: 0 0 100%;
-  max-width: 100%;
-}
-
-/*  */
-
-.hero-banner {
-  min-height: auto;}
-
+  }
+  .searchL {
+    font-style: none;
+    background: #e35e0d;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    align-items: center;
+    position: relative;
+  }
+  .searchL:hover {
+    background: #e76a1c;
+    text-decoration: none;
+    color: white;
+  }
+  .green-box .btn.btn-primary {
+    width: 70%;
+    margin: 0 auto;
+    display: table;
+  }
+  .custom-header .navbar-expand-lg .navbar-nav .nav-link {
+    padding: 15px 0;
+  }
+  /* area page */
+  .area-content {
+    padding-right: 0;
+    text-align: center;
+  }
+  .hero-banner::before {
+    background-position: 11% 500%;
+  }
+  .green-from {
+    top: 0;
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+  .area-hero-content {
+    padding-top: 15px;
+  }
+  .short-bio p {
+    font-size: 14px;
+  }
+  .field-40, .field-60 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  /*  */
+  .hero-banner {
+    min-height: auto;
+  }
   .hero-banner img {
     height: 39.5vh;
-}
+  }
   .area-hero-content {
     position: relative;
     margin-top: -37vh;
-}
-
-.hero-banner-short{
-  height: auto;
-  margin-bottom:0
-}
-
-.contact-fomr{
-  margin-top:0;
-  padding-bottom: 15px;
-}
-
-.page-title{
-  top: 60px;
-}
-.featured-slide-lr {
-  flex: 0 0 100%;
-  max-width: 100%;
-  position: relative;
-}
-.green-room {
-
-  padding: 15px;
-  margin-top: -10px;
-}
-
-.softing-bar{
-  margin-bottom:25px
-}
-
-.price.new-price-filter {
-  display: flex;
-  justify-content: space-between;
-}
-
-.price.new-price-filter p {
-  font-size: 14px;
-  font-weight: 600;
-  text-transform: uppercase;
-  margin-bottom: 0;
-}
-
-.price.new-price-filter h3 {
-  font-size: 24px;
-  text-align: left;
-}
-
-.golf-info.no-padding.golf-plus-hotel .golf-houe p {
-  display: none;
-}
-.golf-houe2 > h3 {
-  font-size: 20px;
-}
-
-.form-group span{
-  top:12px
-}
-
-.form-group input{
-  height:50px !important;
-  min-height:50px
-}
-.contact-fomr .btn, .green-box .btn.btn-primary{
- height:50px
-}
-
-.radio-custom .form-check input{
-  top: -20px;
-}
-
+  }
+  .hero-banner-short {
+    height: auto;
+    margin-bottom: 0
+  }
+  .contact-fomr {
+    margin-top: 0;
+    padding-bottom: 15px;
+  }
+  .page-title {
+    top: 60px;
+  }
+  .featured-slide-lr {
+    flex: 0 0 100%;
+    max-width: 100%;
+    position: relative;
+  }
+  .green-room {
+    padding: 15px;
+    margin-top: -10px;
+  }
+  .softing-bar {
+    margin-bottom: 25px
+  }
+  .price.new-price-filter {
+    display: flex;
+    justify-content: space-between;
+  }
+  .price.new-price-filter p {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 0;
+  }
+  .price.new-price-filter h3 {
+    font-size: 24px;
+    text-align: left;
+  }
+  .golf-info.no-padding.golf-plus-hotel .golf-houe p {
+    display: none;
+  }
+  .golf-houe2>h3 {
+    font-size: 20px;
+  }
+  .form-group span {
+    top: 12px
+  }
+  .form-group input {
+    height: 50px !important;
+    min-height: 50px
+  }
+  .contact-fomr .btn, .green-box .btn.btn-primary {
+    height: 50px
+  }
+  .radio-custom .form-check input {
+    top: -20px;
+  }
 }
 
 /* ########### */
 
-img.img-box{
+img.img-box {
   height: 440px;
   width: 100%;
-  background-position: center; 
+  background-position: center;
 }

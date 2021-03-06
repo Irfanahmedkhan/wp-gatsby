@@ -153,7 +153,7 @@ export default function Head() {
                 </NavDropdown>
 
                 <Nav.Link>
-                  <Link to="/golf-with-hotels">Golf With Hotel</Link>
+                  <Link to="/GolfWithHotelAll">Golf With Hotel</Link>
                 </Nav.Link>
                 <Nav.Link>
                   <Link to="/">Golf Courses & Rates</Link>{" "}
